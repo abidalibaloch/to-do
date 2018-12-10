@@ -11,7 +11,7 @@
 			$result = mysqli_query($connect, $sql);
 			if (mysqli_num_rows($result) > 0) {// Num row check start
 				$_SESSION['duplicate'] = true;
-				header ("Location: /todo2");
+				header ("Location: /");
 			} else {
 				//Insert new record
 				$sql = "INSERT INTO task (name) VALUES ('$task')";
@@ -19,7 +19,7 @@
 				$result = mysqli_query($connect, $sql);
 				
 				if($result){
-					header ("Location: /todo2");
+					header ("Location: /");
 				} else {
 					echo "Error " . mysqli_error($connect);
 				}	
@@ -33,7 +33,7 @@
 			$result = mysqli_query($connect, $sql);
 			
 			if($result){
-				header ("Location: /todo2");
+				header ("Location: /");
 			} else {
 				echo "Error " . mysqli_error($connect);
 			}	
